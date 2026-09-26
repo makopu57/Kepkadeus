@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://d2gi1vkbpoi0i"]
+
+[ext_resource type="Script" uid="uid://cmhfl0j24oerg" path="res://script/player.gd" id="1_7omxl"]
+[ext_resource type="Texture2D" uid="uid://dcj836e5qsam" path="res://icon.svg" id="2_3c7ea"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmf2t"]
+size = Vector2(128, 128)
+
+[sub_resource type="Gradient" id="Gradient_3c7ea"]
+offsets = PackedFloat32Array(0, 0.79375)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3705t"]
+gradient = SubResource("Gradient_3c7ea")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[node name="Player" type="Node2D" unique_id=1206923300]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=631387406]
+script = ExtResource("1_7omxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=2034510679]
+texture = ExtResource("2_3c7ea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1324898681]
+shape = SubResource("RectangleShape2D_cmf2t")
+
+[node name="PointLight2D" type="PointLight2D" parent="CharacterBody2D" unique_id=1961919715]
+position = Vector2(0, -800)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_3705t")
+texture_scale = 50.0
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1165293687]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=2080277466]
+color = Color(0.23392546, 0.23392546, 0.23392543, 1)

@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://dfa85h0flq0fq"]
+
+[ext_resource type="PackedScene" uid="uid://batj30f73x40l" path="res://player.tscn" id="1_5pgpd"]
+[ext_resource type="Texture2D" uid="uid://dw6tu3d7yjki1" path="res://sprite/background.png" id="1_ip2ov"]
+[ext_resource type="Texture2D" uid="uid://ddsdbb32ydbu4" path="res://sprite/floor_all.png" id="2_8x7w6"]
+
+[sub_resource type="Gradient" id="Gradient_ip2ov"]
+offsets = PackedFloat32Array(0, 0.55, 1)
+colors = PackedColorArray(0, 0.56198406, 0.90987456, 1, 0.68562925, 0.8336399, 1, 1, 0, 0.18209413, 0.3473638, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3705t"]
+gradient = SubResource("Gradient_ip2ov")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmf2t"]
+size = Vector2(17.777779, 1)
+
+[node name="world" type="Node2D" unique_id=758488878]
+
+[node name="Environment" type="Node2D" parent="." unique_id=764570696]
+
+[node name="other" type="Node2D" parent="Environment" unique_id=2031223653]
+
+[node name="sky" type="Sprite2D" parent="Environment/other" unique_id=1516765894]
+scale = Vector2(1886.529, 1000)
+texture = SubResource("GradientTexture2D_3705t")
+metadata/_edit_lock_ = true
+
+[node name="Parallax2D" type="Parallax2D" parent="Environment/other" unique_id=155845460]
+scale = Vector2(3.2, 3.2)
+scroll_scale = Vector2(0.5, 0.5)
+scroll_offset = Vector2(1511, 220)
+repeat_size = Vector2(1511, 0)
+repeat_times = 3
+metadata/_edit_lock_ = true
+
+[node name="background" type="Sprite2D" parent="Environment/other/Parallax2D" unique_id=1260797954]
+position = Vector2(-92.0752, 81.640015)
+texture = ExtResource("1_ip2ov")
+
+[node name="Ground" type="Node2D" parent="Environment" unique_id=920662760]
+
+[node name="und" type="Node2D" parent="Environment/Ground" unique_id=437156815]
+
+[node name="5" type="Sprite2D" parent="Environment/Ground/und" unique_id=542663885]
+position = Vector2(960, 1435)
+texture = ExtResource("2_8x7w6")
+
+[node name="6" type="Sprite2D" parent="Environment/Ground/und" unique_id=1926815703]
+position = Vector2(-960, 1436)
+texture = ExtResource("2_8x7w6")
+
+[node name="7" type="Sprite2D" parent="Environment/Ground/und" unique_id=1442790456]
+position = Vector2(2880, 1435)
+texture = ExtResource("2_8x7w6")
+
+[node name="8" type="Sprite2D" parent="Environment/Ground/und" unique_id=2020760806]
+position = Vector2(-2880, 1436)
+texture = ExtResource("2_8x7w6")
+
+[node name="1" type="Sprite2D" parent="Environment/Ground/und" unique_id=1612040287]
+position = Vector2(960, 1194)
+texture = ExtResource("2_8x7w6")
+
+[node name="2" type="Sprite2D" parent="Environment/Ground/und" unique_id=1261095332]
+position = Vector2(-960, 1195)
+texture = ExtResource("2_8x7w6")
+
+[node name="3" type="Sprite2D" parent="Environment/Ground/und" unique_id=1802012040]
+position = Vector2(2880, 1194)
+texture = ExtResource("2_8x7w6")
+
+[node name="4" type="Sprite2D" parent="Environment/Ground/und" unique_id=1439342966]
+position = Vector2(-2880, 1195)
+texture = ExtResource("2_8x7w6")
+
+[node name="9" type="Sprite2D" parent="Environment/Ground/und" unique_id=400130965]
+position = Vector2(960, 1436)
+rotation = -3.1415927
+texture = ExtResource("2_8x7w6")
+
+[node name="10" type="Sprite2D" parent="Environment/Ground/und" unique_id=1729109085]
+position = Vector2(-960, 1436)
+rotation = -3.1415927
+texture = ExtResource("2_8x7w6")
+
+[node name="11" type="Sprite2D" parent="Environment/Ground/und" unique_id=535547116]
+position = Vector2(2880, 1435)
+rotation = -3.1415927
+texture = ExtResource("2_8x7w6")
+
+[node name="12" type="Sprite2D" parent="Environment/Ground/und" unique_id=535779267]
+position = Vector2(-2880, 1436)
+rotation = -3.1415927
+texture = ExtResource("2_8x7w6")
+
+[node name="1" type="StaticBody2D" parent="Environment/Ground" unique_id=1396073035]
+position = Vector2(960, 952)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground/1" unique_id=2099699634]
+scale = Vector2(108, 256)
+shape = SubResource("RectangleShape2D_cmf2t")
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Ground/1" unique_id=218886192]
+texture = ExtResource("2_8x7w6")
+
+[node name="2" type="StaticBody2D" parent="Environment/Ground" unique_id=671562171]
+position = Vector2(2880, 952)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground/2" unique_id=1259895284]
+scale = Vector2(108, 256)
+shape = SubResource("RectangleShape2D_cmf2t")
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Ground/2" unique_id=490652892]
+texture = ExtResource("2_8x7w6")
+
+[node name="3" type="StaticBody2D" parent="Environment/Ground" unique_id=2087861892]
+position = Vector2(-960, 952)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground/3" unique_id=1087270335]
+scale = Vector2(108, 256)
+shape = SubResource("RectangleShape2D_cmf2t")
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Ground/3" unique_id=41932271]
+texture = ExtResource("2_8x7w6")
+
+[node name="4" type="StaticBody2D" parent="Environment/Ground" unique_id=959989708]
+position = Vector2(-2880, 952)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground/4" unique_id=1211027455]
+scale = Vector2(108, 256)
+shape = SubResource("RectangleShape2D_cmf2t")
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Ground/4" unique_id=1451390955]
+texture = ExtResource("2_8x7w6")
+
+[node name="player" parent="Environment" unique_id=1102477021 instance=ExtResource("1_5pgpd")]
+position = Vector2(952, 518)
+speed = 200
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=57771132]
